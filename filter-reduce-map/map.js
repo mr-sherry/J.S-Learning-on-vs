@@ -57,7 +57,7 @@ let object = numbers.map((value) => {
         }
     }
 }, {});
-console.log(object);
+// console.log(object);
 
 
 
