@@ -64,9 +64,6 @@ let uniqueNumbers=numbers2.filter((num1,index)=>index===num1);
 // Given an array of numbers, return only the prime numbers.
 
 
-const numbers4 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-// Expected Output: [2, 3, 5, 7, 11]
-
 
 //                          ===========next Question===========                     // 
 
@@ -80,7 +77,7 @@ const scores = [
 // Expected Output: [{ name: "Alice", score: 85 }, { name: "Charlie", score: 75 }]
 
 let result=scores.filter((student)=>student.score>=60)
-console.log(result);
+// console.log(result);
 
 
 

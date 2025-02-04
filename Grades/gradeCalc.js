@@ -47,6 +47,8 @@ let funn = (obj) => {
 }
 students.forEach(funn);
 
+
+
 let obMarks = 0;
 let totalMarks = 500;
 let funn2 = (obj) => {
@@ -59,6 +61,9 @@ let funn2 = (obj) => {
     }
 }
 students.forEach(funn2)
+
+
+
 let percentage = 0;
 if (obMarks > 0) {
     percentage = 100 / totalMarks * obMarks
@@ -67,6 +72,9 @@ if (obMarks > 0) {
 else {
     console.log('Roll No Not Matched');
 }
+
+
+
 switch (true) {
     case percentage > 90:
         console.log(`Passed With Grade A+`);

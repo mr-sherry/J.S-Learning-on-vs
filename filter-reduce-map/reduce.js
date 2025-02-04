@@ -11,16 +11,26 @@ let multiArr=array1.reduce((accu,val)=>accu*val);
 
 
 let array2=[10, 25, 30, 5]; // Output: 30
-let findMax=array2.reduce((accu,val)=> accu>val ? accu:val);
-// console.log(findMax);
+let findMax=array2.reduce((accu,val)=>
+{
+  console.log(` acc val : ${accu} , val : ${val}`);
+  return    accu>val ? accu:val
+
+  
+}
+,0);
+console.log(findMax);
 
 
 
 let words=["apple", "banana", "apple", "orange", "banana", "apple"];
 // Output: { apple: 3, banana: 2, orange: 1 }
-let countWords=words.reduce((accu,word)=>{accu[word]=(accu[word] || 0)+1; 
+let countWords=words.reduce((accu,word)=>{
+  console.log(`${accu} value ${word}`);
+  
+  accu[word]=(accu[word] || 0)+1; 
 return accu;},{});
-// console.log(countWords);
+console.log(countWords);
 
 
 
@@ -44,4 +54,15 @@ const users = [
   },{})
   // console.log(obj);
   
+  let cart=[
+    {name:"shirt", price:500},
+    {name:"shoe", price:500},
+    {name:"pant", price:1000}
+  ]
+  let total=cart.reduce((accu,key)=>{
+    let total1=accu+key.price
+
+    return total1
+  },0)
+  console.log(total);
   
