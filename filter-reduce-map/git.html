@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+</body>
+<script>
+    let parent = document.querySelector('.parent');
+    let body = document.querySelector('body');
+    console.log(parent);
+    console.log(parent.children); // HTML Collection Return
+    console.log(parent.children[1].innerHTML);
+    console.log(parent.children[1].style.color = "yellow");
+
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     (parent.children[i].style.backgroundColor = "lightGreen");
+    //     console.log(parent.children[i]);
+    // }
+
+
+    console.log(parent.firstElementChild);
+    parent.firstElementChild.style.backgroundColor = "lightGreen"
+    console.log(parent.lastElementChild);
+    parent.lastElementChild.style.backgroundColor = "lightBlue"
+
+
+
+    // let dayOne = document.querySelector(".day")
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.parentNode);
+
+
+
+    console.log(parent.parentElement);
+    console.log(parent.parentNode);
+
+    console.log(body.parentElement);
+    console.log(body.parentNode);
+
+</script>
+
+</html>

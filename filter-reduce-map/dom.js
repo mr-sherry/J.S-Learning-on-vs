@@ -1,6 +1,3 @@
-let liList = document.querySelectorAll('p')
-undefined
-
 let paragraphs = document.querySelectorAll('p')
 undefined
 
@@ -96,14 +93,6 @@ undefined
 
 
 let h2All=document.querySelectorAll("h2")
-undefined
-h2All.forEach((heading2)=>{
-    heading2.innerText="ahmed"
-})
-undefined
-h2All.forEach((heading2)=>{
-    heading2.innerText="Ahmed Changed This"
-})
 undefined
 h2All.forEach((heading2)=>{
     heading2.innerText="Ahmed Raza Shahid"
