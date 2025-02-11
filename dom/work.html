@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>helllo adding div</h1>
+    </div>
+
+</body>
+<script>
+    let addDiv = (text, idName, display, bgcolor, txtcolor, fontSize, pad) => {
+        let div = document.createElement('div')
+        div.id = idName
+        div.style.display = display
+        div.style.backgroundColor = bgcolor
+        div.style.color = txtcolor
+        div.style.fontSize = fontSize
+        div.style.padding = pad
+
+        div.appendChild(document.createTextNode(`${text}`));
+        document.querySelector('body').appendChild(div)
+    }
+    addDiv("hello", "main", "", "red", "yellow", "40pxs", "30px")
+
+    
+
+    let divWithList = (divId, ulId, litext, itemsArr) => {
+        let div = document.createElement('div')
+        div.id = divId
+        document.querySelector('body').appendChild(div)
+
+        let ul = document.createElement('ul')
+        document.getElementById(divId).appendChild(ul)
+        ul.id = ulId
+
+        itemsArr.forEach((itemText) => {
+            let li = document.createElement('li')
+            li.appendChild(document.createTextNode(`${itemText}`));
+            document.getElementById(ulId).appendChild(li)
+        });
+
+        let li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${litext}`));
+        document.getElementById(ulId).appendChild(li)
+    }
+    divWithList("Div-For-list", "ul-Main", "hello", ["hello", "ahmed", "javaScript"])
+
+
+
+    let divForImages = (divId,imagePath) => {
+        let div = document.createElement('div')
+        div.id = divId
+        document.querySelector('body').appendChild(div)
+
+        let image = document.createElement("img")
+        document.getElementById(divId).appendChild(image)
+    }
+    divForImages("Div-Of-Images","./48a42b19-3810-4491-b8d1-4632d7f2e0c7_medium.webp")
+
+
+
+    let divForP = (divIdP,pText, displayP, bgcolorP, txtcolorP, fontSizeP) => {
+        let div1 = document.createElement('div')
+        div1.id = divIdP
+        div1.style.display = displayP
+        div1.style.backgroundColor = bgcolorP
+        div1.style.color = txtcolorP
+        div1.style.fontSize = fontSizeP
+        div1.id = divIdP
+        document.querySelector('body').appendChild(div1)
+
+        let para = document.createElement("p")
+        para.appendChild(document.createTextNode(`${pText}`));
+        document.getElementById(divIdP).appendChild(para)
+    }
+    divForP("main1","hello Bro", "flex", "black", "white", "40px")
+
+
+
+
+    let divForHeading = (divId,hText) => {
+        let div = document.createElement('div')
+        div.id = divId
+        document.querySelector('body').appendChild(div)
+
+        let head = document.createElement("h1")
+        head.appendChild(document.createTextNode(`${hText}`));
+        document.getElementById(divId).appendChild(head)
+    }
+    divForHeading("div-for-heading","hello bro")
+
+</script>
+
+</html>
