@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Contact Us</h1>
+    </div>
+
+</body>
+<script>
+    let mainDiv = document.getElementById('main')
+    mainDiv.style.display = "flex"
+    mainDiv.style.flexDirection = "column"
+    mainDiv.style.alignItems = "center"
+    mainDiv.style.justifyContent = "center"
+
+    let createForm = (formId, formAction, formMethod, inputsArr) => {
+        let form = document.createElement('form');
+        form.style.display = "flex"
+        form.style.flexDirection = "column"
+        form.style.width = "80%"
+        form.style.alignItems = "center"
+        form.style.justifyContent = "center"
+        form.style.alignContent = "center"
+        form.style.border = "2px solid"
+        form.style.borderRadius = "20px"
+        form.style.padding="10px"
+
+
+        form.id = formId;
+        form.action = formAction;
+        form.method = formMethod;
+
+        inputsArr.forEach((inputDetails) => {
+            let label = document.createElement('label');
+            // label.style.border="2px solid black"
+            label.style.margin = "10px"
+            label.style.fontSize = "30px"
+            label.style.letterSpacing = "10px"
+
+            label.setAttribute('for', inputDetails.name);
+            label.appendChild(document.createTextNode(inputDetails.labelText));
+
+            let input = document.createElement('input');
+            input.style.margin = "5px"
+            input.style.padding = "5px"
+            input.style.width = "300px"
+            input.style.borderRadius = "20px"
+            input.style.border = "2px solid"
+            input.style.backgroundColor = "white"
+            input.type = inputDetails.type;
+            input.name = inputDetails.name;
+            input.placeholder = inputDetails.placeholder;
+            input.value = inputDetails.value || '';
+
+            form.appendChild(label);
+            form.appendChild(input);
+            form.appendChild(document.createElement('br'));
+        });
+
+
+        let labelForMessage = document.createElement('label');
+        // label.style.border="2px solid black"
+        // labelForMessage.style.margin = "5px"
+        labelForMessage.style.fontSize = "30px"
+        labelForMessage.style.letterSpacing = "10px"
+        labelForMessage.setAttribute('for', 'Message');
+        labelForMessage.appendChild(document.createTextNode('Message'))
+        form.appendChild(labelForMessage)
+
+        let messageBox = document.createElement('textarea');
+        messageBox.placeholder = "Type your message here...";
+        messageBox.style.width = "300px";
+        messageBox.style.height = "150px";
+        messageBox.style.padding = "10px";
+        messageBox.style.border = "2px solid black";
+        messageBox.style.borderRadius = "20px";
+        messageBox.style.fontSize = "16px";
+        messageBox.style.margin = "10px";
+
+        form.appendChild(messageBox);
+
+
+        let submitButton = document.createElement('button');
+        submitButton.style.width = "200px"
+        submitButton.style.height = "30px"
+        submitButton.style.borderRadius = "20px"
+        submitButton.style.border = "none"
+        submitButton.style.backgroundColor = "black"
+        submitButton.style.color = "white"
+        submitButton.type = 'submit';
+        submitButton.appendChild(document.createTextNode("Submit"));
+        form.appendChild(submitButton);
+
+        document.getElementById('main').appendChild(form);
+
+    };
+
+
+    createForm("myForm", "#", "POST", [
+        {
+            name: "username",
+            labelText: "Username",
+            type: "text",
+            placeholder: "Enter your username"
+        },
+        {
+            name: "email",
+            labelText: "Email",
+            type: "email",
+            placeholder: "Enter your email"
+        },
+        {
+            name: "password",
+            labelText: "Password",
+            type: "password",
+            placeholder: "Enter your password"
+        }
+    ]);
+
+</script>
+
+</html>
