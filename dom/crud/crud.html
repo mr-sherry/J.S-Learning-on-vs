@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/dom/crud.css" />
+  </head>
+  <body>
+    <h2>Create</h2>
+    <input type="text" id="Input" class="inputsAll" placeholder="Enter text" />
+    <button id="create-Btn">Create</button>
+
+    <h2>Update</h2>
+    <input type="text" id="Index" class="inputsAll" placeholder="Index" />
+    <input type="text" id="Value" class="inputsAll" placeholder="New Value" />
+    <button id="update-Btn">Update</button>
+
+    <h2>Delete</h2>
+    <input type="text" class="inputsAll" id="deleteIndex" placeholder="Index" />
+    <button id="delete-Btn">Delete</button>
+
+    <h2>Read</h2>
+    <button id="read-Btn">Read</button>
+    <ul id="list"></ul>
+  </body>
+  <script>
+    let items = [];
+
+    let crBtn = document.getElementById("create-Btn");
+    let upBtn = document.getElementById("update-Btn");
+    let delBtn = document.getElementById("delete-Btn");
+    let readBtn = document.getElementById("read-Btn");
+
+    crBtn.addEventListener("click", () => {
+      let input = document.getElementById("Input").value;
+      if (input) {
+        items.push(input);
+        document.getElementById("Input").value = "";
+      }
+    });
+
+    upBtn.addEventListener("click", () => {
+      let index = document.getElementById("Index").value;
+      let value = document.getElementById("Value").value;
+      if (index >= 0) {
+        items[index] = value;
+      }
+    });
+
+    delBtn.addEventListener("click", () => {
+      let index = document.getElementById("deleteIndex").value;
+      if (index >= 0) {
+        items.splice(index, 1);
+      }
+    });
+
+    readBtn.addEventListener("click", () => {
+      let list = document.getElementById("list");
+      list.innerHTML = "";
+      console.log(list);
+      
+      items.forEach((item, index) => {
+        list.innerHTML = list.innerHTML + `<li>${index}: ${item}</li>`;
+      });
+    });
+  </script>
+</html>
