@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(15, 15, 15);
+}
+.title{
+    color: rgb(255, 255, 255);
+}
+label{
+    color:rgb(255, 255, 255);
+}
+button{
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+form{
+    border: 2px solid white;
+}
+input{
+    border: 2px solid white;
+    background-color: black;
+}
+textarea{
+    background-color: black;
+    border: 2px solid white;
+}
+.Theme{
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    height: 25px;
+    margin-top: 2px;
+
+}
+.Theme-div{
+    text-align: center;
+}
+.formTable{
+    width: 50%;
+}
+.container{
+    display: flex;
+    text-align: center;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 2px solid #ffffff;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #737373;
+    color: #000000;
+}
+tr {
+    background-color: #000000;
+    color: #ddd;
+}

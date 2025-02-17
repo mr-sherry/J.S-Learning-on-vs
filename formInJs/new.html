@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/formInJs/light.css" />
+  </head>
+
+  <body>
+    <div class="Theme-div">
+      <button id="btn-light" class="Theme">dark</button>
+      <button id="btn-dark" class="Theme">light</button>
+    </div>
+    <div class="container">
+      <div id="main" class="formTable">
+        <h1 class="title">Contact Us</h1>
+      </div>
+      <div class="formTable">
+        <h1 class="title">Table</h1>
+        <table id="mainTable">
+          <tr>
+            <th>User-Name</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+          <tr>
+            <td>ahmed</td>
+            <td>ahmed@gmail.com</td>
+            <td>ahmed@123</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script>
+    let mainDiv = document.getElementById("main");
+    mainDiv.style.display = "flex";
+    mainDiv.style.flexDirection = "column";
+    mainDiv.style.alignItems = "center";
+    mainDiv.style.justifyContent = "center";
+
+    let createForm = (formId, formAction, formMethod, inputsArr) => {
+      let form = document.createElement("form");
+      form.style.display = "flex";
+      form.style.flexDirection = "column";
+      form.style.width = "80%";
+      form.style.alignItems = "center";
+      form.style.justifyContent = "center";
+      form.style.alignContent = "center";
+      form.style.borderRadius = "20px";
+      form.style.padding = "10px";
+
+      form.id = formId;
+      form.action = formAction;
+      form.method = formMethod;
+
+      inputsArr.forEach((inputDetails) => {
+        let label = document.createElement("label");
+        // label.style.border="2px solid black"
+        label.style.margin = "10px";
+        label.style.fontSize = "30px";
+        label.style.letterSpacing = "10px";
+        label.className = "labels";
+
+        label.setAttribute("for", inputDetails.name);
+        label.appendChild(document.createTextNode(inputDetails.labelText));
+
+        let input = document.createElement("input");
+        input.style.margin = "5px";
+        input.style.padding = "5px";
+        input.style.width = "300px";
+        input.style.borderRadius = "20px";
+        input.type = inputDetails.type;
+        input.name = inputDetails.name;
+        input.id = inputDetails.id;
+        input.placeholder = inputDetails.placeholder;
+        input.value = inputDetails.value || "";
+        input.className = "inputs";
+
+        form.appendChild(label);
+        form.appendChild(input);
+        form.appendChild(document.createElement("br"));
+      });
+
+      let labelForMessage = document.createElement("label");
+      // label.style.border="2px solid black"
+      // labelForMessage.style.margin = "5px"
+      labelForMessage.style.fontSize = "30px";
+      labelForMessage.style.letterSpacing = "10px";
+      labelForMessage.setAttribute("for", "Message");
+      labelForMessage.appendChild(document.createTextNode("Message"));
+      form.appendChild(labelForMessage);
+
+      let messageBox = document.createElement("textarea");
+      messageBox.placeholder = "Type your message here...";
+      messageBox.style.width = "300px";
+      messageBox.style.height = "150px";
+      messageBox.style.padding = "10px";
+      messageBox.style.borderRadius = "20px";
+      messageBox.style.fontSize = "16px";
+      messageBox.style.margin = "10px";
+
+      form.appendChild(messageBox);
+
+      let submitButton = document.createElement("button");
+      submitButton.style.width = "200px";
+      submitButton.style.height = "30px";
+      submitButton.style.borderRadius = "20px";
+      submitButton.type = "submit";
+      submitButton.id = "formSubmitButton";
+      submitButton.appendChild(document.createTextNode("Submit"));
+      form.appendChild(submitButton);
+
+      document.getElementById("main").appendChild(form);
+    };
+
+    createForm("myForm", "#", "POST", [
+      {
+        name: "username",
+        labelText: "Username",
+        type: "text",
+        id: "userName",
+        placeholder: "Enter your username",
+      },
+      {
+        name: "email",
+        labelText: "Email",
+        type: "email",
+        id: "email",
+        placeholder: "Enter your email",
+      },
+      {
+        name: "password",
+        labelText: "Password",
+        type: "password",
+        id: "password",
+        placeholder: "Enter your password",
+      },
+    ]);
+
+    let dark = document.getElementById("btn-dark");
+    dark.addEventListener("click", () => {
+      let styleSheet = document.querySelector("link");
+      styleSheet.setAttribute("href", "/formInJs/light.css");
+    });
+
+    let light = document.getElementById("btn-light");
+    light.addEventListener("click", () => {
+      let styleSheet = document.querySelector("link");
+      styleSheet.setAttribute("href", "/formInJs/dark.css");
+    });
+
+    // let styleSheet = document.querySelector("link");
+    // console.log(styleSheet);
+    // let attribute=styleSheet.getAttribute("href")
+    // console.log(attribute);
+
+
+    
+    // let userName=document.getElementById("userName").value;
+    //   console.log(userName);
+
+    //   let email=document.getElementById("email").value;
+    //   let password=document.getElementById("password").value;
+
+    let formBtn = document.getElementById("formSubmitButton");
+    formBtn.addEventListener("click", () => {
+      let userName = document.getElementById("userName").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      let table1 = document.querySelector("table");
+      let tr = document.createElement("tr");
+      let td = document.createElement("td");
+      let td1 = document.createElement("td");
+      let td2 = document.createElement("td");
+
+      td.innerText = userName;
+      td1.innerText = email;
+      td2.innerText = password;
+
+      tr.appendChild(td);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      table1.appendChild(tr);
+      
+      
+    });
+  </script>
+</html>
