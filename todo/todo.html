@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="Input">
+        <button id="addBtn">add item</button>
+    </div>
+    <div>
+        <ul id="ulMain">
+
+        </ul>
+    </div>
+    
+</body>
+<script>
+    let arr=[]
+    console.log(arr);
+    
+    let crBtn=document.getElementById("addBtn")
+    crBtn.addEventListener("click", () => {
+      let input = document.getElementById("Input").value;
+      if (input) {
+        // arr.push(input);
+        
+        document.getElementById("Input").value = "";
+      }
+    });
+</script>
+</html>

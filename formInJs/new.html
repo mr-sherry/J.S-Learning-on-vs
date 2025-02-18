@@ -40,7 +40,8 @@
     mainDiv.style.alignItems = "center";
     mainDiv.style.justifyContent = "center";
 
-    let createForm = (formId, formAction, formMethod, inputsArr) => {
+    // let createForm = (formId, formAction, formMethod, inputsArr) => {
+    let createForm = (formId, inputsArr) => {
       let form = document.createElement("form");
       form.style.display = "flex";
       form.style.flexDirection = "column";
@@ -52,8 +53,8 @@
       form.style.padding = "10px";
 
       form.id = formId;
-      form.action = formAction;
-      form.method = formMethod;
+      // form.action = formAction;
+      // form.method = formMethod;
 
       inputsArr.forEach((inputDetails) => {
         let label = document.createElement("label");
@@ -115,7 +116,7 @@
       document.getElementById("main").appendChild(form);
     };
 
-    createForm("myForm", "#", "POST", [
+    createForm("myForm", [
       {
         name: "username",
         labelText: "Username",
@@ -162,7 +163,8 @@
     //   let password=document.getElementById("password").value;
 
     let formBtn = document.getElementById("formSubmitButton");
-    formBtn.addEventListener("click", () => {
+    formBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       let userName = document.getElementById("userName").value;
       let email = document.getElementById("email").value;
       let password = document.getElementById("password").value;
