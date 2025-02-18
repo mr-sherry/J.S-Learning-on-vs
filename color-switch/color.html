@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color picker</title>
+    <link rel="stylesheet" href="color.css" />
+  </head>
+  <body id="body-color">
+    <div id="bg-color">
+      <input type="color" id="color-pick" />
+      <!-- <button id="get-hex">get color</button> -->
+      <button id="color-picker">Bg Change</button><br />
+    </div>
+
+    <div class="allBtns">
+      <button id="button-1"></button>
+      <button id="button-2"></button>
+      <button id="button-3"></button>
+      <button id="button-4"></button>
+      <button id="button-5"></button>
+    </div>
+    
+  </body>
+  <script>
+    // let colorInput=document.getElementById("color-pick").value
+    // console.log(colorInput);
+
+    let divBg = document.getElementById("bg-color");
+    let btn = document.getElementById("color-picker");
+
+    btn.addEventListener("click", () => {
+      colorhex = document.getElementById("color-pick").value;
+
+      divBg.style.backgroundColor = colorhex;
+    });
+
+    /////////////////////////////////////////////////////////////////////
+    let body = document.getElementById("body-color");
+
+    let btn1 = document.getElementById("button-1");
+    btn1.addEventListener("click", () => {
+      body.style.backgroundColor = "#191970";
+    });
+
+    let btn2 = document.getElementById("button-2");
+    btn2.addEventListener("click", () => {
+      body.style.backgroundColor = "#36454F";
+    });
+
+    let btn3 = document.getElementById("button-3");
+    btn3.addEventListener("click", () => {
+      body.style.backgroundColor = "#556B2F";
+    });
+
+    let btn4 = document.getElementById("button-4");
+    btn4.addEventListener("click", () => {
+      body.style.backgroundColor = "#800000";
+    });
+
+    let btn5 = document.getElementById("button-5");
+    btn5.addEventListener("click", () => {
+      body.style.backgroundColor = "#003333";
+    });
+  </script>
+</html>

@@ -9,8 +9,8 @@
 
   <body>
     <div class="Theme-div">
-      <button id="btn-light" class="Theme">dark</button>
-      <button id="btn-dark" class="Theme">light</button>
+      <!-- <button id="btn-light" class="Theme">light</button> -->
+      <button id="btn-dark" class="Theme">Theme</button>
     </div>
     <div class="container">
       <div id="main" class="formTable">
@@ -142,13 +142,12 @@
     let dark = document.getElementById("btn-dark");
     dark.addEventListener("click", () => {
       let styleSheet = document.querySelector("link");
-      styleSheet.setAttribute("href", "/formInJs/light.css");
-    });
-
-    let light = document.getElementById("btn-light");
-    light.addEventListener("click", () => {
-      let styleSheet = document.querySelector("link");
-      styleSheet.setAttribute("href", "/formInJs/dark.css");
+      let attribute3 = styleSheet.getAttribute("href");
+      if (attribute3 == "/formInJs/light.css") {
+        styleSheet.setAttribute("href", "/formInJs/dark.css");
+      } else {
+        styleSheet.setAttribute("href", "/formInJs/light.css");
+      }
     });
 
     // let styleSheet = document.querySelector("link");
@@ -156,8 +155,6 @@
     // let attribute=styleSheet.getAttribute("href")
     // console.log(attribute);
 
-
-    
     // let userName=document.getElementById("userName").value;
     //   console.log(userName);
 
@@ -184,8 +181,6 @@
       tr.appendChild(td1);
       tr.appendChild(td2);
       table1.appendChild(tr);
-      
-      
     });
   </script>
 </html>
