@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="/projects/quoteGen/index.css">
+</head>
+<body>
+    <div id="quote-div">
+
+    </div>
+    <button id="nextQ">Next Quote</button>
+</body>
+<script>
+    let quotesArr = [
+    "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+    "Do what you can, with what you have, where you are. – Theodore Roosevelt",
+    "Success is not final, failure is not fatal: it is the courage to continue that counts. – Winston Churchill",
+    "Believe you can and you're halfway there. – Theodore Roosevelt",
+    "Act as if what you do makes a difference. It does. – William James",
+    "Keep your face always toward the sunshine—and shadows will fall behind you. – Walt Whitman",
+    "The best way to predict the future is to create it. – Peter Drucker",
+    "Don't watch the clock; do what it does. Keep going. – Sam Levenson",
+    "You are never too old to set another goal or to dream a new dream. – C.S. Lewis",
+    "It does not matter how slowly you go as long as you do not stop. – Confucius"
+];
+let div=document.getElementById("quote-div")
+let button=document.getElementById("nextQ")
+let randomIndex=Math.floor(Math.random() * quotesArr.length);
+    console.log(randomIndex);
+    let randomQ=quotesArr[randomIndex]
+    console.log(randomQ);
+    div.innerText=randomQ
+
+button.addEventListener("click",()=>{
+    div.innerText="";
+    let randomIndex=Math.floor(Math.random() * quotesArr.length);
+    console.log(randomIndex);
+    let randomQ=quotesArr[randomIndex]
+    console.log(randomQ);
+    div.innerText=randomQ
+    
+})
+
+
+</script>
+</html>
