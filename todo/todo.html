@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <input type="text" id="Input">
-        <button id="addBtn">add item</button>
+      <input type="text" id="Input" />
+      <button id="addBtn">add item</button>
     </div>
     <div>
-        <ul id="ulMain">
-
-        </ul>
+      <ul id="ulMain" style="list-style-type: none"></ul>
     </div>
-    
-</body>
-<script>
-    let arr=[]
+  </body>
+  <script>
+    let arr = [];
     console.log(arr);
-    
-    let crBtn=document.getElementById("addBtn")
+    let ulList = document.getElementById("ulMain");
+
+    let crBtn = document.getElementById("addBtn");
     crBtn.addEventListener("click", () => {
       let input = document.getElementById("Input").value;
       if (input) {
-        // arr.push(input);
-        
+        arr.push(input);
         document.getElementById("Input").value = "";
+        hello();
       }
     });
-</script>
+
+    
+    let hello=()=> {
+
+      ulList.innerHTML = "";
+
+      arr.forEach((item, index) => {
+        let li = document.createElement("li");
+        let delBtn = document.createElement("button");
+        
+
+        li.innerHTML = `${index}: ${item} `;
+        delBtn.textContent = "Del";
+        delBtn.addEventListener("click", () => {
+          arr.splice(index, 1);
+          hello();
+        });
+
+        li.appendChild(delBtn);
+        ulList.appendChild(li);
+      });
+    }
+  </script>
 </html>
