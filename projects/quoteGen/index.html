@@ -28,17 +28,17 @@
 let div=document.getElementById("quote-div")
 let button=document.getElementById("nextQ")
 let randomIndex=Math.floor(Math.random() * quotesArr.length);
-    console.log(randomIndex);
+    // console.log(randomIndex);
     let randomQ=quotesArr[randomIndex]
-    console.log(randomQ);
+    // console.log(randomQ);
     div.innerText=randomQ
 
 button.addEventListener("click",()=>{
     div.innerText="";
     let randomIndex=Math.floor(Math.random() * quotesArr.length);
-    console.log(randomIndex);
+    // console.log(randomIndex);
     let randomQ=quotesArr[randomIndex]
-    console.log(randomQ);
+    // console.log(randomQ);
     div.innerText=randomQ
     
 })
