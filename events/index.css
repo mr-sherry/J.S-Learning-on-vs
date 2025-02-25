@@ -1,0 +1,15 @@
+#list-images{
+    display: flex;
+    gap: 20px;
+    /* text-align: center; */
+    justify-content: center;
+    list-style-type: none
+}
+img{
+    width: 200px;
+    height: 150px;
+}
+.heading{
+    text-align: center;
+    font-size: 60px;
+}

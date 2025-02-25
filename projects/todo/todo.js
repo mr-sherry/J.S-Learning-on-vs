@@ -25,7 +25,6 @@ let hello = () => {
     delBtn.addEventListener("click", () => {
       arr.splice(index, 1);
       hello();
-
     });
 
     li.appendChild(delBtn);
