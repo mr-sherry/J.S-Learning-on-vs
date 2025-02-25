@@ -3,58 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #list-images {
-        display: flex;
-        gap: 20px;
-        /* text-align: center; */
-        justify-content: center;
-        list-style-type: none;
-      }
-      img {
-        width: 200px;
-        height: 150px;
-      }
-      .heading {
-        text-align: center;
-        font-size: 60px;
-      }
-    </style>
+    <title>Insert Image URL</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div id="divForUl">
-      <h1 class="heading">List of Images</h1>
-      <ul id="list-images">
-        <li><img src="./imges/5fd90d3c5c7c7c0018545a04.jpg" alt="" /></li>
-        <li><img src="./imges/62182159_medium.jpg" alt="" /></li>
-        <li><img src="./imges/62781549_medium.jpg" alt="" /></li>
-        <li>
-          <img
-            src="./imges/a-small-round-island-covered-in-green-moss-adorned-with-tiny-plants-and-bathed-in-natural-light-has-water-flowing-around-it-free-photo.jpg"
-            alt=""
-          />
-        </li>
-        <li><img src="./imges/images.jpg" alt="" /></li>
-        <li>
-          <img
-            src="./imges/tranquil-bonsai-tree-with-lush-green-foliage-at-sunset-nature-focused-zen-garden-art-for-wall-decor-or-meditation-space-photo.jpg"
-            alt=""
-          />
-        </li>
-      </ul>
-    </div>
+    <h2 class="heading">Insert Image URL</h2>
+
+    <input type="text" id="imageUrlInput" placeholder="Enter image URL" />
+    <button id="addImageBtn">Add Image</button>
+<div class="main">
+
+    <ul id="list-images">
+      <li><img src="/events/imges/5fd90d3c5c7c7c0018545a04.jpg" alt="" /></li>
+      <li><img src="/events/imges/62182159_medium.jpg" alt="" /></li>
+      <li><img src="/events/imges/62781549_medium.jpg" alt="" /></li>
+      <li><img src="/events/imges/a-small-round-island-covered-in-green-moss-adorned-with-tiny-plants-and-bathed-in-natural-light-has-water-flowing-around-it-free-photo.jpg" alt="" /></li>
+      <li><img src="/events/imges/images.jpg" alt="" /></li>
+      <li><img src="/events/imges/tranquil-bonsai-tree-with-lush-green-foliage-at-sunset-nature-focused-zen-garden-art-for-wall-decor-or-meditation-space-photo.jpg" alt="" /></li>
+    </ul>
+</div>
+
+    <script src="./index.js"></script>
   </body>
-  <script>
-    let images = document
-      .getElementById("list-images")
-      .addEventListener("click", function (e) {
-        console.log(e.target.parentNode);
-        console.log(e.target.tagName);
-        if (e.target.tagName === "IMG") {
-          e.target.parentNode.remove();
-          alert("Removing clicked picture ");
-        }
-      });
-  </script>
 </html>
