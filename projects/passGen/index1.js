@@ -94,6 +94,8 @@ button.addEventListener("click", () => {
 
   let input = document.getElementById("input").value;
   let input2 = (parseInt(input) / 4);
+  console.log(input2);
+  
   let finalPass = [];
 
 
@@ -101,8 +103,14 @@ button.addEventListener("click", () => {
     data.forEach((arr) => {
       for (let index = 0; index < input2; index++) {
         let randomIndex = Math.floor(Math.random() * arr.length);
+        console.log("random index",randomIndex); // 0
+        
         let hello = arr[randomIndex];
+        console.log("hello index",hello); //A
+
         finalPass.push(hello);
+        console.log(finalPass);
+        
       }
     });
 
