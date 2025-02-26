@@ -1,9 +1,9 @@
 document.getElementById("myButton").addEventListener("click", function(event) {
-    console.log(event.clientX, event.clientY); 
+    console.log("client X and Y",event.clientX, event.clientY); 
 });
 
 document.getElementById("myButton").addEventListener("click", function(event) {
-    console.log(event.screenX, event.screenY); 
+    console.log("screen X and Y",event.screenX, event.screenY); 
 });
 
 document.addEventListener("keydown", function(event) {
@@ -24,5 +24,5 @@ document.addEventListener("keydown", function(event) {
 });
 
 document.getElementById("hello").addEventListener("mouseover", function(event) {
-    console.log(event.toElement);  // Output: <div> or another element within #myDiv
+    console.log(event.toElement); 
 });
