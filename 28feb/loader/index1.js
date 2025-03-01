@@ -17,16 +17,16 @@ const startRandomColor = () => {
     for (let i = 1; i <= 10; i++) {
       setTimeout(() => {
         document.querySelector(`#d${i}`).style.backgroundColor = newColor;
-      }, i * 50);
+      }, i * 150);
     }
     setTimeout(() => {
       for (let i = 1; i <= 10; i++) {
         setTimeout(() => {
           document.querySelector(`#d${i}`).style.backgroundColor = "white";
-        }, i * 50);
+        }, i * 150);
       }
-    }, 500);
-  }, 1000);
+    }, 1500);
+  }, 3000);
 };
 
 const stopRandomColor = () => {

@@ -1,20 +1,17 @@
 let userA = null;
-let allImages = document.querySelectorAll(".img1");
-let times = 0;
+let allDiv = document.querySelectorAll(".gridDiv");
 
 function tickAndCross() {
-  allImages.forEach((img) => {
-    img.addEventListener(
+  allDiv.forEach((div) => {
+    div.addEventListener(
       "click",
       () => {
         if (userA == true) {
-          img.setAttribute("src", "./images/tick.png");
+          div.innerHTML = "<~>";
           userA = false;
-          times++;
         } else if (userA == false) {
-          img.setAttribute("src", "./images/cross.png");
+          div.innerHTML = "X";
           userA = true;
-          times++;
         }
       },
       { once: true }
@@ -54,15 +51,13 @@ startBtn.addEventListener("click", () => {
 });
 
 endBtn.addEventListener("click", () => {
-  if (times == 9) {
-    userA = null;
-    userChosed = null;
-    startBtn.removeAttribute("disabled");
-    cross.removeAttribute("disabled");
-    tick.removeAttribute("disabled");
-    allImages.forEach((img) => {
-      img.removeAttribute("src");
-    });
-    tickAndCross();
-  }
+  userA = null;
+  userChosed = null;
+  startBtn.removeAttribute("disabled");
+  cross.removeAttribute("disabled");
+  tick.removeAttribute("disabled");
+  allImages.forEach((img) => {
+    img.removeAttribute("src");
+  });
+  tickAndCross();
 });
