@@ -50,7 +50,7 @@ img {
   visibility: hidden;
   min-width: 300px;
   max-width: 90%;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  background: linear-gradient(135deg, #000000, #8d0000);
   color: white;
   font-weight: bold;
   text-align: center;

@@ -2,6 +2,7 @@ let userA = 2;
 let allDiv = document.querySelectorAll(".gridDiv");
 let startBtn = document.getElementById("startBtn");
 let draw = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+let times = 0;
 
 startBtn.addEventListener("click", () => {
   userA = 1;
@@ -18,6 +19,7 @@ function tickAndCross(e) {
     let key = Number(div.id);
     let val = div.innerHTML;
     draw[key] = { val };
+    times++;
 
     // console.log(draw[key].val);
   } else if (userA === 0) {
@@ -26,6 +28,7 @@ function tickAndCross(e) {
     let key = Number(div.id);
     let val = div.innerHTML;
     draw[key] = { val };
+    times++;
     // console.log(draw[key].val);
   } else {
     alert("please press Start btn");
@@ -119,8 +122,8 @@ function checkWin() {
       showToast(`${draw[2].val} Wins`);
       resetGame();
       break;
+    case times == 9:
+      showToast(`Game Draw`);
+      resetGame();
   }
 }
-// window.addEventListener("keydown", function (e) {
-//   console.log(e.key, e.keyCode, e.code);
-// });
