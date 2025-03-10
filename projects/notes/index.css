@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212; /* Deep black background */
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #f0f0f0; /* Light gray for text */
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1e1e1e; /* Dark gray container */
+  width: 70%;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+#head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#head img {
+  width: 70px;
+  height: 70px;
+}
+
+#note {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 70px;
+  font-weight: bold;
+  color: #f0f0f0; /* Light gray text */
+}
+
+#messageBox {
+  width: 100%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  height: 95px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 25px;
+  background: #121212;
+  color: #f0f0f0;
+  resize: none;
+  outline: none;
+}
+
+#addBtn {
+  background-color: #f0f0f0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #121212;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+}
+
+#addBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.2);
+  background-color: #e0e0e0;
+}
+
+#container1 {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+p {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 14px;
+  flex-grow: 1;
+  margin-right: 10px;
+  color: #f0f0f0;
+}
+
+#container1 > div > .divforbtn > button {
+  background: #ffffff;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #121212;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  margin: 10px;
+}
+#container1 > div > .divforbtn > button > img {
+  width: 100%;
+  height: 100%;
+}
+
+#container1 > div > .divforbtn > button:hover {
+  background: #ffffff;
+  color: #f0f0f0;
+}
+
+#container1 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 48%;
+  margin: 10px;
+  border: 2px solid #ffffff;
+  background: #000000;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+#container1 > div > .divforp > p {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  word-break: break-all;
+  white-space: normal;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+#container1 > div > .divforp > textarea {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  height: 180px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 25px;
+  background: #1e1e1e;
+  color: #f0f0f0;
+  resize: none;
+}
+
+#container1 > div > .divforp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+
+#container1 > div > .divforbtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 15%;
+}

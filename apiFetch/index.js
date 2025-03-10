@@ -1,5 +1,5 @@
-let heading = document.getElementById("hello");
-let button = document.querySelector("button");
+// let heading = document.getElementById("hello");
+// let button = document.querySelector("button");
 
 // let api = "https://api.github.com/users/mr-sherry";
 // let xhr = new XMLHttpRequest();
@@ -19,15 +19,18 @@ let button = document.querySelector("button");
 
 async function hello() {
   let data = await fetch("https://api.github.com/users/mr-sherry");
+  // console.log(data);
+
   let data1 = await data.json();
-  // console.log(data1);
+  console.log(data1);
 
-  button.addEventListener("click", () => {
-    let input = document.getElementById("input").value;
-    heading.innerText = data1[input];
-    // console.log(data);
+  // button.addEventListener("click", () => {
+  //   let input = document.getElementById("input").value;
+  //   heading.innerText = data1[input];
 
-    // console.log(input);
-  });
+  // console.log(data);
+
+  // console.log(input);
+  // });
 }
 hello();

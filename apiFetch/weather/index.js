@@ -10,9 +10,9 @@ async function checkWeather(city) {
 
   document.querySelector("#temp").innerHTML = `${data.current.temp_c}°C`;
   document.querySelector("#city").innerHTML = data.location.name;
-  document.querySelector("#humidity1").innerHTML = data.current.humidity;
+  document.querySelector("#humidity1").innerHTML = `${data.current.humidity}%`;
 
-  weatherIcon.src = `https:${data.current.condition.icon}`;
+  weatherIcon.setAttribute("src", `https:${data.current.condition.icon}`);
 }
 
 searchBtn.addEventListener("click", () => {
