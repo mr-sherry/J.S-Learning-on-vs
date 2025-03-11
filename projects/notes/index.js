@@ -2,14 +2,19 @@ let data = JSON.parse(localStorage.getItem("CreatedNote")) || [];
 console.log(data);
 
 let addBtn = document.getElementById("addBtn");
+let delAllNotes = document.getElementById("delAllNotes");
 let containerDiv = document.getElementById("container1");
-
+let input = document.getElementById("messageBox");
 addBtn.addEventListener("click", () => {
-  let input = document.getElementById("messageBox").value;
-  if (input) {
-    data.push(input);
-    input = "";
+  let input1 = input.value;
+
+  if (input1) {
+    data.push(input1);
+    console.log("first", input);
+
     hello();
+    console.log("second", input1);
+    input.value = "";
   }
 });
 

@@ -1,33 +1,31 @@
-let arr = [];
-// console.log(arr);
 let ulList = document.getElementById("ulMain");
 let crBtn = document.getElementById("addBtn");
+
+let key = 1;
 
 crBtn.addEventListener("click", () => {
   let input = document.getElementById("Input").value;
   if (input) {
-    arr.push(input);
+    localStorage.setItem(key, input);
     document.getElementById("Input").value = "";
-    hello();
+    hello(key);
+    key++;
   }
 });
 
-let hello = () => {
-  ulList.innerHTML = "";
+let hello = (key) => {
+  let li = document.createElement("li");
+  li.innerHTML = localStorage.getItem(key);
 
-  arr.forEach((item, index) => {
-    let li = document.createElement("li");
-    li.innerHTML = `${index}: ${item} `;
+  let delBtn = document.createElement("button");
+  delBtn.textContent = "Del";
 
-    let delBtn = document.createElement("button");
-    delBtn.textContent = "Del";
+  delBtn.addEventListener("click", () => {
+    localStorage.removeItem(key);
+    console.log(key);
 
-    delBtn.addEventListener("click", () => {
-      arr.splice(index, 1);
-      hello();
-    });
-
-    li.appendChild(delBtn);
-    ulList.appendChild(li);
+    li.innerHTML = "";
   });
+  li.appendChild(delBtn);
+  ulList.appendChild(li);
 };

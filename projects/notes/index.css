@@ -80,6 +80,27 @@ body {
   box-shadow: 0 3px 8px rgba(255, 255, 255, 0.2);
   background-color: #e0e0e0;
 }
+#delAllNotes {
+  background-color: #f0f0f0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #121212;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+}
+
+#delAllNotes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.2);
+  background-color: #e0e0e0;
+}
 
 #container1 {
   background-color: #1e1e1e;
